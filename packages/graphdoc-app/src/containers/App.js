@@ -1,6 +1,7 @@
 import React from 'react';
 import GlobalStyle from '../globalStyles';
 import Schema from './Schema';
+import Explorer from './Explorer';
 import StyledWrapper from './StyledWrapper';
 import {
   BrowserRouter as Router,
@@ -11,29 +12,30 @@ import {
 
 const App = () => {
   return (
-    <div>
+    <main className="flex flex-grow">
       <GlobalStyle/>
       <StyledWrapper>
-        <div className="container mx-auto">
-          <Router>
-            <Switch>
-              <Route path="/">
+        <Router>
+          <Switch>
+            <Route path="/">
+              {/*<div className="container mx-auto">
                 <Schema />
-              </Route>
-              <Route path="/guides">
-                Guides
-              </Route>
-              <Route path="/collections">
-                Collections
-              </Route>
-              <Route path="/explorer">
-                Explorer
-              </Route>
-            </Switch>
-          </Router>
-        </div>
+              </div>*/}
+              <Explorer />
+            </Route>
+            <Route path="/guides">
+              Guides
+            </Route>
+            <Route path="/collections">
+              Collections
+            </Route>
+            <Route path="/explorer">
+              Explorer
+            </Route>
+          </Switch>
+        </Router>
       </StyledWrapper>
-    </div>
+    </main>
   )
 };
 export default App;
