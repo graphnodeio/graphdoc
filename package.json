@@ -1,0 +1,13 @@
+{
+  "name": "graphdoc",
+  "version": "0.0.1",
+  "description": "Graphql Documentation Portal",
+  "main": "index.js",
+  "repository": "https://github.com/graphnodeio/graphdoc.git",
+  "author": "Anoop M D <anoop.md1421@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
