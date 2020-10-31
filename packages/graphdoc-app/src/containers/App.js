@@ -17,20 +17,19 @@ const App = () => {
       <StyledWrapper>
         <Router>
           <Switch>
-            <Route path="/">
-              {/*<div className="container mx-auto">
+            <Route exact path="/">
+              <div className="container mx-auto">
                 <Schema />
-              </div>*/}
-              <Explorer />
+              </div>
             </Route>
-            <Route path="/guides">
+            <Route exact path="/guides">
               Guides
             </Route>
-            <Route path="/collections">
+            <Route exact path="/collections">
               Collections
             </Route>
-            <Route path="/explorer">
-              Explorer
+            <Route exact path="/explorer">
+              <Explorer />
             </Route>
           </Switch>
         </Router>
