@@ -1,5 +1,6 @@
 import React from 'react';
 import GlobalStyle from '../globalStyles';
+import Schema from './Schema';
 import StyledWrapper from './StyledWrapper';
 import {
   BrowserRouter as Router,
@@ -13,16 +14,24 @@ const App = () => {
     <div>
       <GlobalStyle/>
       <StyledWrapper>
-        <Router>
-          <Switch>
-            <Route path="/app">
-              App
-            </Route>
-            <Route path="/">
-              Home
-            </Route>
-          </Switch>
-        </Router>
+        <div className="container mx-auto">
+          <Router>
+            <Switch>
+              <Route path="/">
+                <Schema />
+              </Route>
+              <Route path="/guides">
+                Guides
+              </Route>
+              <Route path="/collections">
+                Collections
+              </Route>
+              <Route path="/explorer">
+                Explorer
+              </Route>
+            </Switch>
+          </Router>
+        </div>
       </StyledWrapper>
     </div>
   )
