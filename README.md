@@ -1,0 +1,2 @@
+# graphdoc
+Graphql Documentation
