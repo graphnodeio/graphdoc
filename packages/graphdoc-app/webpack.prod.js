@@ -1,14 +1,29 @@
 const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './index.js',
   devtool: "source-map",
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  },
+  externals: {
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
   },
   module: {
     rules: [
@@ -58,10 +73,6 @@ module.exports = {
     disableHostCheck: true
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
-    }),
     new CopyWebpackPlugin({
       patterns: [
           { from: '../../node_modules/graphql-voyager/dist/voyager.worker.js' , to: path.resolve(__dirname, 'dist')},

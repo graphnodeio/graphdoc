@@ -64,7 +64,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-          { from: '../../node_modules/graphql-voyager/dist/voyager.worker.js' , to: path.resolve(__dirname, 'dist')},
+          { from: '../../node_modules/@graphnode/graphdoc-app/dist/voyager.worker.js' , to: path.resolve(__dirname, 'dist')},
       ]
     }),
   ]
