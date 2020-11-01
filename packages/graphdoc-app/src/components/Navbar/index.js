@@ -2,6 +2,7 @@ import React from "react"
 import StyledWrapper from './StyledWrapper';
 import { faBuilding } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {NavLink} from 'react-router-dom';
 
 const Navbar = () => (
   <StyledWrapper>
@@ -18,18 +19,12 @@ const Navbar = () => (
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto text-right">
           <div className="text-sm lg:flex-grow">
-            <a href="/">
-              Schema
-            </a>
-            <a href="/guides">
-              Guides
-            </a>
-            <a href="/collections">
-              Collections
-            </a>
-            <a href="/explorer">
-              Explorer
-            </a>
+            {/*Todo: Implement dropdown https://fireship.io/lessons/dropdown-menu-multi-level-react/*/}
+            <NavLink exact to='/' activeClassName="active">Schema</NavLink>
+            <NavLink exact to='/schema/visualize' activeClassName="active">Visualize</NavLink>
+            <NavLink exact to='/guides' activeClassName="active">Guides</NavLink>
+            <NavLink exact to='/collections' activeClassName="active">Collections</NavLink>
+            <NavLink exact to='/explorer' activeClassName="active">Explorer</NavLink>
           </div>
         </div>
       </nav>

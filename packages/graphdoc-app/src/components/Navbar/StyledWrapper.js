@@ -13,16 +13,15 @@ const Wrapper = styled.div`
   }
   nav {
     a {
-      font-weight: 600;
       font-size: 16px;
     }
     ${tw`mr-1`}
 
     a {
-      ${tw`block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-8`}
+      ${tw`block mt-4 lg:inline-block lg:mt-0 mr-8`}
 
       &.active {
-        ${tw`-mb-px border-l border-t border-r rounded-t text-blue-700 font-semibold`}
+        ${tw`text-blue-800 font-semibold`}
       }
     }
   }
