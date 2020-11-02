@@ -4,6 +4,7 @@ import GlobalStyle from '../globalStyles';
 import Schema from './Schema';
 import Explorer from './Explorer';
 import StyledWrapper from './StyledWrapper';
+import useGraphdocConfig from '../providers/GraphdocConfigProvider';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,6 +13,10 @@ import {
 } from "react-router-dom";
 
 const App = () => {
+  const config = useGraphdocConfig();
+
+  console.log(config);
+
   return (
     <React.Fragment>
       <Router>
