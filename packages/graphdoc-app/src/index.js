@@ -6,9 +6,13 @@ import { GraphdocConfigProvider } from './providers/GraphdocConfigProvider';
 import theme from './theme';
 import './style/index.css';
 
+let config = {
+  content: '# Hello world!'
+};
+
 render(
   <ThemeProvider theme={theme}>
-      <GraphdocConfigProvider>
+      <GraphdocConfigProvider config = {config}>
         <App />
       </GraphdocConfigProvider>
    </ThemeProvider>

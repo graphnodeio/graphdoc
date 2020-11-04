@@ -1,18 +1,18 @@
 import React from 'react';
 
-const GraphdocConfigContext = React.createContext();
+export const GraphdocConfigContext = React.createContext();
 
 export const GraphdocConfigProvider = props => {
-  let config = {foo: 'bar'};
+  let config = props.config || {};
 
-  return <GraphdocConfigContext.Provider value={{ config }} {...props} />;
+  return <GraphdocConfigContext.Provider value={config} {...props} />;
 };
 
 export const useGraphdocConfig = () => {
   const context = React.useContext(GraphdocConfigContext);
 
   if (context === undefined) {
-    throw new Error(`useGraphdocConfig must be used within a AuthProvider`);
+    throw new Error(`useGraphdocConfig must be used within a GraphdocConfigProvider`);
   }
 
   return context;

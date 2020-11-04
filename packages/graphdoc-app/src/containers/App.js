@@ -2,9 +2,11 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import GlobalStyle from '../globalStyles';
 import Schema from './Schema';
+import Guides from './Guides';
 import Explorer from './Explorer';
 import StyledWrapper from './StyledWrapper';
-import useGraphdocConfig from '../providers/GraphdocConfigProvider';
+import {useGraphdocConfig} from '../providers/GraphdocConfigProvider';
+import {GraphdocConfigContext} from '../providers/GraphdocConfigProvider';
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,7 +33,12 @@ const App = () => {
                   <Schema />
                 </Route>
                 <Route exact path="/guides">
-                  Guides
+                  <GraphdocConfigContext.Consumer>
+                    {(config) => (
+                      <Guides config={config}/>
+                    )}
+                  </GraphdocConfigContext.Consumer>
+                  
                 </Route>
                 <Route exact path="/collections">
                   Collections
