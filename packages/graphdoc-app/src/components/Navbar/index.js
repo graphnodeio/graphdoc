@@ -10,7 +10,7 @@ const Navbar = () => (
       <nav className="flex items-center justify-between flex-wrap pt-6 pb-6 pr-2 pl-2">
         <div className="flex items-center flex-shrink-0 mr-6">
           <FontAwesomeIcon icon={faBuilding} className="mr-2"/>
-          Company Logo
+          Acme Inc.
         </div>
         <div className="block lg:hidden">
           <button className="flex items-center px-3 py-2 border rounded border-teal-400 hover:text-white hover:border-white">

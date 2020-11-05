@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { GraphdocConfigProvider } from './providers/GraphdocConfigProvider';
 import theme from './theme';
 import './style/index.css';
+import './style/markdown.css';
 
 let config = {
   content: '# Hello world!'
