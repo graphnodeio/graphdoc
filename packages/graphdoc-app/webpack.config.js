@@ -1,6 +1,9 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const DirectoryTreePlugin = require('directory-tree-webpack-plugin');
+
+console.log(path.resolve(__dirname, 'site/guides/home.md'));
 
 module.exports = {
   entry: './src/index.js',
@@ -43,7 +46,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf|otf)$/i,
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf|otf|md)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -65,7 +68,13 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
           { from: '../../node_modules/graphql-voyager/dist/voyager.worker.js' , to: path.resolve(__dirname, 'dist')},
+          { from: path.resolve(__dirname, 'site/guides/home.md') , to: path.resolve(__dirname, 'dist/guides')}
       ]
     }),
+    new DirectoryTreePlugin({
+      dir: './site/guides',
+      path: './config/guides.json',
+      extensions: /\.md/
+    })
   ]
 };

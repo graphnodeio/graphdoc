@@ -17,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "autoprefixer": "^10.0.1",
     "copy-webpack-plugin": "^6.2.1",
+    "directory-tree-webpack-plugin": "^1.0.2",
     "file-loader": "^6.1.1",
     "graphiql": "^1.0.6",
     "graphql": "^15.3.0",

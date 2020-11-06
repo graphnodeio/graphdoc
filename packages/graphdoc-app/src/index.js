@@ -8,7 +8,10 @@ import './style/index.css';
 import './style/markdown.css';
 
 let config = {
-  content: '# Hello world!'
+  content: 'Hi',
+  guides: {
+    name: 'guides/home.md'
+  }
 };
 
 render(
