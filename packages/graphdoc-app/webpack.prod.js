@@ -1,6 +1,10 @@
 const path = require('path');
+const mkdirp = require('mkdirp');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const DirectoryTreePlugin = require('directory-tree-webpack-plugin');
+
+// Create dist folder
+mkdirp.sync('dist');
 
 module.exports = {
   entry: './index.js',
@@ -82,7 +86,7 @@ module.exports = {
     }),
     new DirectoryTreePlugin({
       dir: './site/guides',
-      path: './config/guides.json',
+      path: 'dist/guides.json',
       extensions: /\.md/
     })
   ]
