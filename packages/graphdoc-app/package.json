@@ -22,6 +22,7 @@
     "graphiql": "^1.0.6",
     "graphql": "^15.3.0",
     "graphql-voyager": "^1.0.0-rc.31",
+    "lodash": "^4.17.20",
     "markdown-to-jsx": "^7.0.1",
     "moment": "^2.29.1",
     "postcss": "^8.1.3",
